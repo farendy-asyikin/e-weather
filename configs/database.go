@@ -63,6 +63,7 @@ func SetupDatabaseConnection() *gorm.DB {
 		&models.User{},
 		&models.Device{},
 		&models.Sensor{},
+		&models.SensorValue{},
 	)
 	if err != nil {
 		panic("Failed to migrate database")
