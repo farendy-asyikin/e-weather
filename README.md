@@ -26,6 +26,8 @@
   ```
 - Run the data seeder
 
+- Database using Postgre SQL
+
 ## Contributing
 
 1. Create new branch with the following format
