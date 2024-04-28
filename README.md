@@ -45,4 +45,4 @@
 7. After approved, then can be merged
 
 ## Postman Collection
-    -
+    https://www.postman.com/grey-crescent-340741/workspace/m-cineplex/collection/33809558-f55c7e37-3f6b-474b-90b6-6a1a61c2f31d?action=share&creator=33809558&active-environment=33809558-c744b13b-0219-4117-aca3-a49964673b81

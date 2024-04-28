@@ -64,27 +64,26 @@ func SetupRouter(r *gin.Engine, db *gorm.DB) {
 
 		deviceRoutes := apiRoutes.Group("devices")
 		{
-			deviceRoutes.POST("", deviceHandler.CreateDevice)
-			deviceRoutes.PUT("/:id", deviceHandler.UpdateDevice)
-			deviceRoutes.DELETE("/:id", deviceHandler.DeleteDevice)
-			deviceRoutes.GET("/:id", deviceHandler.GetDeviceByID)
+			deviceRoutes.POST("", authMiddleware, deviceHandler.CreateDevice)
+			deviceRoutes.PUT("/:id", authMiddleware, deviceHandler.UpdateDevice)
+			deviceRoutes.DELETE("/:id", authMiddleware, deviceHandler.DeleteDevice)
+			deviceRoutes.GET("/:id", authMiddleware, deviceHandler.GetDeviceByID)
 		}
 
 		sensorRoutes := apiRoutes.Group("sensors")
 		{
-			sensorRoutes.POST("", sensorHandler.CreateSensor)
-			sensorRoutes.PUT("/:id", sensorHandler.UpdateSensor)
-			sensorRoutes.DELETE("/:id", sensorHandler.DeleteSensor)
-			sensorRoutes.GET("/:id", sensorHandler.GetSensorByID)
+			sensorRoutes.POST("", authMiddleware, sensorHandler.CreateSensor)
+			sensorRoutes.PUT("/:id", authMiddleware, sensorHandler.UpdateSensor)
+			sensorRoutes.DELETE("/:id", authMiddleware, sensorHandler.DeleteSensor)
+			sensorRoutes.GET("/:id", authMiddleware, sensorHandler.GetSensorByID)
 		}
 
 		sensorValueRoutes := apiRoutes.Group("sensor-values")
 		{
-			sensorValueRoutes.POST("", sensorValueHandler.CreateValue)
-			sensorValueRoutes.GET("/:id", sensorValueHandler.GetValueByID)
-			sensorValueRoutes.GET("", sensorValueHandler.ListValuePagination)
-			sensorValueRoutes.POST("/bulk-delete", sensorValueHandler.BulkDeleteValue)
+			sensorValueRoutes.POST("", authMiddleware, sensorValueHandler.CreateValue)
+			sensorValueRoutes.GET("/:id", authMiddleware, sensorValueHandler.GetValueByID)
+			sensorValueRoutes.GET("", authMiddleware, sensorValueHandler.ListValuePagination)
+			sensorValueRoutes.POST("/bulk-delete", authMiddleware, sensorValueHandler.BulkDeleteValue)
 		}
-
 	}
 }
