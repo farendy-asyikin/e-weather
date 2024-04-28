@@ -1,0 +1,8 @@
+# railway.yml
+
+version: '1.0'
+services:
+  app:
+    buildCommand: go build -o ./bin/main .
+    runCommand: ./bin/main
+    port: 8080
