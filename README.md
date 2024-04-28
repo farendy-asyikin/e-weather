@@ -24,6 +24,7 @@
   ```
   go run main.go
   ```
+- Run the data seeder
 
 ## Contributing
 
