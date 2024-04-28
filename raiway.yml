@@ -12,6 +12,6 @@ services:
   database:
     image: "postgres"
     env:
-      - POSTGRES_USER=myuser
-      - POSTGRES_PASSWORD=mypassword
-      - POSTGRES_DB=e-weather
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=smBbYaPlVkartqDfcLlwyhqcdGFViWAu
+      - POSTGRES_DB=railway
